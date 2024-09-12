@@ -1,0 +1,121 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px;
+  width: 100%;
+  height: 300vh;
+  background-image: linear-gradient(
+    135deg,
+    hsl(276deg 74% 16%) 0%,
+    hsl(280deg 74% 17%) 14%,
+    hsl(284deg 75% 18%) 21%,
+    hsl(288deg 75% 19%) 26%,
+    hsl(292deg 76% 20%) 30%,
+    hsl(296deg 76% 21%) 35%,
+    hsl(301deg 76% 22%) 39%,
+    hsl(305deg 77% 23%) 43%,
+    hsl(309deg 77% 24%) 46%,
+    hsl(313deg 78% 25%) 50%,
+    hsl(317deg 78% 26%) 54%,
+    hsl(321deg 79% 27%) 57%,
+    hsl(325deg 79% 27%) 61%,
+    hsl(329deg 80% 28%) 65%,
+    hsl(333deg 80% 29%) 69%,
+    hsl(338deg 81% 30%) 74%,
+    hsl(342deg 81% 31%) 79%,
+    hsl(346deg 82% 32%) 86%,
+    hsl(350deg 82% 33%) 100%
+  );
+  z-index: -2;
+  overflow-x: hidden;
+}
+
+.content {
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.me-container {
+  position: fixed;
+  top: 2.25rem;
+  right: 1.25rem;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  z-index: -2;
+  transition: background-color 0.2s;
+  background: conic-gradient(from 0deg, rgb(207, 113, 5), rgb(244, 221, 71), rgb(207, 113, 5));
+  animation: rotateConicGradient 30s ease-in-out infinite;
+  filter: blur(2px);
+}
+
+@keyframes rotateConicGradient {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.me {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  top: 100px;
+  right: 50px;
+  width: 60vh;
+  scale: 1;
+  image-rendering: auto;
+  z-index: 0;
+}
+
+.gradient-background {
+  margin-bottom: -100px;
+  width: 100%;
+  height: 75vh;
+  background: linear-gradient(90deg, purple, red, yellow, green, cyan, blue, purple);
+  background-position: 0% 50%; /* Start at purple */
+  background-size: 2000% 2000%;
+  animation: gradientAnimation 480s infinite;
+  filter: brightness(0.6);
+  z-index: -1;
+}
+
+.main-bar {
+  position: absolute;
+  top: 60vh;
+  width: 100%;
+  height: 50vh;
+  background: linear-gradient(90deg, green, cyan, blue, purple, red, yellow, green);
+  background-position: 50% 50%; /* Start at green (50% of gradient) */
+  background-size: 2000% 2000%;
+  animation: gradientAnimation 480s infinite;
+  filter: blur(2px);
+  opacity: 0.8;
+  z-index: 1;
+
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1), 0px 4px 4px rgba(0, 0, 0, 0.2),
+    0px 6px 6px rgba(0, 0, 0, 0.3), 0px 8px 8px rgba(0, 0, 0, 0.4),
+    0px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.cloud-container {
+  width: 100%;
+  height: 500px;
+}
